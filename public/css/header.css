@@ -1,0 +1,283 @@
+header {
+    --height: 70px;
+    position: sticky;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+}
+.header_main {
+    height: var(--height);
+    padding: 15px 30px;
+    background: white;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px 0 #00000033;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header_main a.brand {
+    flex-shrink: 0;
+    height: 100%;
+}
+.header_main a.brand img {
+    height: 100%;
+}
+.header_main .web_logo  {
+    max-height: 30px;
+}
+
+.prime_nav {
+    gap: 4px;
+}
+header nav li {
+    position: relative;
+    list-style-type: none;
+}
+header nav li a {
+    padding: 6px 15px;
+    display: block;
+    font-weight: 600;
+    color: var(--fv_sec);
+    transition: all 0.2s;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+header nav li a i {
+    margin-right: 7px;
+    color: inherit;
+}
+header nav li:hover > a {
+    background: rgba(var(--fv_sec_rgb), 0.1);
+}
+header nav li > ul {
+    --mt: 10px;
+    width: 270px;
+    border-radius: 7px;
+    background: white;
+    padding: 15px;
+    filter: drop-shadow(0 0 10px #00000022);
+    position: absolute;
+    top: calc(100% + var(--mt));
+}
+header nav li > ul::after {
+    content: "";
+    background: white;
+    width: 22px;
+    position: absolute;
+    top: 0;
+    border-radius: 4px;
+    transform: rotate(45deg) translateX(-50%);
+    aspect-ratio: 1;
+    left: 50%;
+    z-index: -1;
+}
+
+header nav li > ul::before {
+    content: "";
+    position: absolute;
+    inset: calc(-1 * var(--mt)) 0 0 0;
+    z-index: -1;
+}
+
+.sec_nav .btn.prime {
+    background: var(--fv_sec);
+    color: white;
+}
+header ul:where(.sign_in, .signed_in) {
+    right: 0;
+    width: 250px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gray_900);
+}
+.sign_in_box.animate ul.sign_in {
+    animation: move 0.4s cubic-bezier(0.4, 0, 1, 1) 7 alternate-reverse;
+}
+.sign_in_box:not(.animate, :hover) ul.sign_in {
+    display: none;
+}
+header ul:is(.sign_in, .signed_in)::after {
+    left: unset;
+    right: 10%;
+    transform: rotate(45deg) translateX(-50%);
+}
+header ul a.btn {
+    font-size: 1.3rem;
+}
+header ul a.btn:hover {
+    background: rgba(var(--fv_sec_rgb), 0.6);
+    color: white;
+}
+header ul.sign_in a {
+    background: rgba(var(--fv_prime_rgb), 0.6);
+    font-size: 1.3rem;
+    border-radius: 7px;
+    color: white;
+}
+header ul.sign_in a:hover {
+    background: rgba(var(--fv_prime_rgb), 1);
+}
+header ul p {
+    margin-block: 4px 10px;
+    color: var(--gray_600);
+}
+:is(.special, .signed_in) li:not(:last-of-type) {
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+}
+:is(.special, .signed_in) li:not(:nth-of-type(n + 3)) {
+    border-bottom: 1px dashed var(--gray_400);
+}
+.signed_in .logout {
+    background: rgba(var(--error_rgb), 0.7);
+    text-align: center;
+    color: white;
+}
+.signed_in .logout:hover {
+    background: var(--error_dark);
+}
+.signed_in_box:not(:hover) ul.signed_in {
+    display: none;
+}
+header ul:is(.club, .special) {
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gray_900);
+}
+.special_box:not(:hover) ul.special,
+.club_box:not(:hover) ul.club {
+    display: none;
+}
+#sidebar_opener {
+    display: none;
+    width: 36px;
+    aspect-ratio: 1;
+    margin-left: 15px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--fv_sec_rgb), 0.1);
+    border-radius: 6px;
+}
+header .side_nav {
+    display: none;
+}
+@keyframes move {
+    to {
+        transform: translateY(10px);
+    }
+}
+@media screen and (max-width: 992px) {
+    header nav li a {
+        padding-inline: 10px;
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 860px) {
+    .club_box {
+        display: none;
+    }
+}
+@media screen and (max-width: 700px) {
+    #sidebar_opener {
+        display: flex;
+    }
+    header nav.prime_nav {
+        display: none;
+    }
+    header .side_nav {
+        display: flex;
+        position: fixed;
+        right: 0;
+        flex-direction: column;
+        top: 0;
+        height: 100%;
+        background: #fefefe;
+        z-index: 1;
+        width: 200px;
+        transform: translateX(100%);
+        box-shadow: 0 0 2000px 0 #00000000;
+        transition: all 0.4s;
+    }
+    header .side_nav.active {
+        transform: translateX(0%);
+        box-shadow: 0 0 2000px 0 #00000066;
+    }
+    header .side_nav li {
+        list-style-type: none;
+    }
+    header .side_nav li a {
+        display: block;
+    }
+    header .side_nav a.brand {
+        height: 45px;
+        margin-inline: auto;
+        margin-block: 15px 20px;
+    }
+
+    .signed_in {
+        width: unset;
+        padding: 0 15px 15px;
+    }
+    .signed_in .btn {
+        padding-block: 6px;
+        color: black;
+        transition: all 0.3s;
+    }
+    .signed_in li {
+        margin-bottom: 5px;
+    }
+    .signed_in li a {
+        padding: 5px 10px;
+    }
+    .signed_in li:hover a {
+        background: rgba(var(--fv_sec_rgb), 0.1);
+        border-radius: 5px;
+    }
+    .signed_in li a i {
+        margin-right: 7px;
+    }
+    .prime_side_nav li {
+        padding-bottom: 3px;
+        margin-bottom: 3px;
+    }
+    .prime_side_nav li:not(:last-of-type) {
+        border-bottom: 1px dashed var(--gray_400);
+    }
+    .prime_side_nav li a {
+        font-weight: 600;
+        padding: 3px 15px;
+        font-size: 1.3rem;
+    }
+    .prime_side_nav li a i {
+        margin-right: 10px;
+    }
+    .prime_side_nav li:hover a {
+        background: rgba(var(--fv_sec_rgb), 0.1);
+        border-radius: 5px;
+    }
+    .member_box {
+        background: rgba(var(--fv_sec_rgb), 0.1);
+        border-radius: 7px;
+        padding: 10px;
+        font-size: 1.2rem;
+        margin-block: 10px;
+    }
+    .member_box p {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    .member_box .btn {
+        font-size: 1.1rem;
+    }
+    .member_box .btn {
+        background: rgba(var(--fv_sec_rgb), 0.6);
+    }
+    header .side_nav ul p {
+        margin-block: 1px 3px;
+        font-size: 0.9rem;
+    }
+}

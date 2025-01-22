@@ -1,0 +1,60 @@
+.checkout-card{
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 2rem;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+
+    text-transform: capitalize;
+}
+.checkout-card i{
+    color: var(--fv_sec);
+}
+.checkout-card .title{
+    color: #fff;
+    padding: 5px 1rem;
+    background: var(--fv_sec);
+    border-radius: 6px;
+    font-size: large;
+    text-align: center;
+}
+.title i{
+    color: #fff;
+}
+
+
+.between{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+p{
+    color: #000;
+font-weight: 600;
+}
+.fare{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.total{
+    border-top: 1px dashed gray;
+    padding: 1rem 0;
+}
+.checkout-card button{
+    width: 200px;
+    margin: auto;
+    background: var(--fv_sec);
+}
+@media only screen and (max-width:600px){
+    .between{
+        justify-items: center;
+    }
+}

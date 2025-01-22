@@ -1,0 +1,16 @@
+:root {
+    --fv_prime: #ee8837;
+    --fv_sec: #0094de;
+
+    --fv_prime_rgb: 238, 136, 55;
+    --fv_sec_rgb: 0, 148, 222;
+}
+.brand {
+    display: inline-block;
+}
+.brand span:first-child {
+    color: var(--fv_sec);
+}
+.brand span:last-child {
+    color: var(--fv_prime);
+}

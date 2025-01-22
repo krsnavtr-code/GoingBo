@@ -1,0 +1,65 @@
+footer{
+    background: #fff;
+    border-top:1px solid gainsboro ;
+}
+.footer_block_title {
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    font-size: 1.4rem;
+}
+.footer_block_links {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.footer_block_links a {
+    margin-top: 10px;
+    display: block;
+    font-size: 1.4rem;
+    color: var(--gray_600);
+}
+
+.footer_block_links a:hover{
+    color: var(--fv_prime);
+}
+
+.destine{
+    padding: 10px 20px;
+    border-top: 2px solid var(--gray_300);
+}
+
+.popular_destinations span:first-child {
+    font-weight: 600;
+    color: var(--gray_600);
+}
+.popular_destinations span:not(:first-child) {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 0 5px;
+    color: var(--gray_500);
+    border-right: 1.5px solid;
+}
+.popular_destinations span a:hover{
+    color: var(--fv_prime);
+}
+.copyright {
+    padding: 20px;
+    border-top: 2px solid var(--gray_300);
+}
+.copyright p {
+    color: var(--gray_500);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: right;
+}
+
+.copyright img{
+    float: left;
+    width: 20%;
+}
+
+@media only screen and (max-width:768px){
+    footer>div {
+        padding: 1rem !important;
+    }
+}

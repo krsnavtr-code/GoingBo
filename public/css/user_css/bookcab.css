@@ -1,0 +1,75 @@
+/* my css */
+
+h1 {
+    text-align: center;
+    color: var(--fv_sec);
+}
+
+.searched-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--fv_prime);
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.searched-box p {
+    background: #fff;
+    padding: 1rem;
+    color: var(--fv_sec);
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.order-box {
+    margin: 1rem 2rem;
+    text-align: center;
+}
+
+.order {
+    background-color: var(--fv_sec);
+    border-radius: 10px;
+}
+.order form{
+    border-radius: 5px;
+    overflow: hidden;
+}
+.order button {
+    background-color: var(--fv_prime);
+}
+
+.query-box {
+    margin: auto;
+    width: 400px;
+    background-color: var(--fv_prime);
+    padding: 2rem;
+    font-size: small;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.query-box button {
+    padding: 0.6rem 1rem;
+    background: #fff;
+    color: var(--fv_sec);
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+}
+
+.search-bar form :nth-last-of-type(2) {
+    grid-column: span 2;
+}
+
+@media only screen and (max-width:600px){
+    .query-box{
+        width: 100%;
+    }
+    
+}

@@ -1,0 +1,63 @@
+.room-slider img {
+    max-height: 200px;
+}
+
+.hidden {
+    background: red;
+    display: none !important;
+}
+
+.hotel-description {
+    overflow: hidden;
+    max-height: 100px;
+    /* Adjust this value to control how much text is shown */
+    text-overflow: ellipsis;
+    transition: max-height 0.3s ease;
+}
+
+.hotel-description.expanded {
+    max-height: none;
+}
+
+/* 376 */
+.map-btn {
+    white-space: nowrap;
+}
+
+.offcanvas .inputs {
+    display: block;
+}
+
+.text-box .controls {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+select,
+textarea,
+label,
+input {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+.text-box {
+    display: block;
+}
+
+.reserve {
+    cursor: pointer;
+}
+
+@media only screen and (max-width:600px) {
+    #policies {
+        padding: 1rem;
+    }
+
+    .Property {
+        padding-left: 1rem;
+        display: block;
+    }
+}

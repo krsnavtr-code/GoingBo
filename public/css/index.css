@@ -1,0 +1,1088 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.search_forms {
+    position: relative;
+}
+
+.search_forms .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: dodgerblue;
+    z-index: -1;
+    height: 45vh;
+    isolation: isolate;
+}
+
+.search_forms .background img {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    object-fit: cover;
+    width: 100%;
+    height: calc(100% + 70px);
+}
+
+.forms_wrapper {
+    z-index: 1;
+    padding: 60px 40px 40px;
+    filter: drop-shadow(0 0 30px #00000033);
+    position: relative;
+}
+
+.forms_wrapper .form_types {
+    background: white;
+    display: flex;
+    width: fit-content;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-inline: auto;
+    transform: translateY(50%);
+    z-index: 2;
+    box-shadow: 0 0 10px 0 #00000033;
+}
+
+.forms_wrapper .form_types .form_type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+    padding: 8px 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    font-size: 1.2rem;
+    justify-content: center;
+}
+
+.forms_wrapper .form_types .form_type i {
+    font-size: 2rem;
+    /* margin-right: 10px; */
+}
+
+.forms_wrapper .form_types .form_type.active {
+    color: white;
+}
+
+.forms_wrapper .form_types .form_type.active::before {
+    z-index: -1;
+    content: "";
+    background: rgba(var(--fv_prime_rgb), 7);
+    inset: 3px;
+    position: absolute;
+    border-radius: 8px;
+}
+
+/* .forms_wrapper .form_types .form_type:not(.active) {
+    background: #002456;
+    color: white;
+} */
+.forms_wrapper form {
+    background: white;
+    padding: 3rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Flight Form goes here */
+form .trip_types,
+form .trip_types .trip_type {
+    display: flex;
+    align-items: center;
+}
+
+form .trip_types {
+    margin: 2rem 0;
+    position: relative;
+}
+
+form .trip_types .trip_type {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 100px;
+    background: rgba(34, 118, 227, 0.1);
+    color: var(--fv_sec);
+}
+
+form .trip_types .trip_type>* {
+    cursor: pointer;
+}
+
+form .trip_types .trip_type:has(input:checked) {
+    color: white;
+    background: var(--fv_prime);
+}
+
+form .fields {
+    display: flex;
+    gap: 5px;
+}
+
+
+form .fields .wrapper .vu-select:has(input:hover),
+form .fields .dates:has(input:hover),
+form .paxs .pax:hover {
+    border-color: rgb(119, 119, 119);
+}
+
+form .fields .wrapper .vu-select:has(input:focus),
+form .fields .dates:has(input:focus),
+form .paxs .pax:focus {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    border-color: rgb(34, 118, 227);
+    color: rgb(20, 24, 35);
+}
+
+span.tw-icon {
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px;
+    background-color: #fff;
+    color: var(--fv_sec);
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+@import url("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/blitzer/jquery-ui.min.css");
+
+.ui-datepicker td span,
+.ui-datepicker td a {
+    padding-bottom: 1em;
+}
+
+.ui-datepicker td[title]::after {
+    content: attr(title);
+    display: block;
+    position: relative;
+    font-size: 0.8em;
+    height: 1.25em;
+    margin-top: -1.25em;
+    text-align: right;
+    padding-right: 0.25em;
+}
+
+form .fields .wrapper {
+    display: flex;
+    gap: 5px;
+    margin-right: 5px;
+}
+
+.vu-select,
+.dates,
+.pax {
+    border: 2px solid rgb(225, 231, 238);
+    border-radius: 8px;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    position: relative;
+    height: 80px;
+    display: block;
+    padding: 1rem;
+}
+
+.vu-content {
+    padding: 10px;
+    position: relative;
+}
+
+:is(.vu-select, .vu-date, .pax) label {
+    position: absolute;
+    top: -10px;
+    transform: translateY(-50%);
+    background: white;
+    font-weight: 600;
+    left: 10%;
+    font-size: 1.3rem;
+    padding: 0 10px;
+    color: #002456;
+    white-space: nowrap;
+}
+
+:is(.vu-select, .vu-date) input {
+    width: 100%;
+    border: none;
+    background: none;
+    font-size: 1.7rem;
+    font-weight: 500;
+    padding: 5px;
+    outline: none;
+}
+
+
+
+.pax .vu-content {
+    flex-grow: 1;
+}
+
+.pax .desc {
+    width: 100%;
+    border: none;
+    background: none;
+    font-size: 1.7rem;
+    font-weight: 500;
+    padding: 5px;
+    outline: none;
+}
+
+.flight_form .location .vu-select input::placeholder {
+    color: #002456;
+}
+
+.vu-content p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-left: 5px;
+    color: var(--gray_900);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.vu-content p span:last-of-type {
+    margin-left: 5px;
+    color: var(--gray_600);
+}
+
+form .search_btn {
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.6rem;
+    background: var(--fv_prime);
+    color: white;
+    padding: 10px 30px;
+    position: absolute;
+    bottom: 0%;
+    right: 36%;
+    transform: translate(-50%, 50%);
+}
+
+form .search_btn i {
+    margin-right: 15px;
+}
+
+.vu-suggestion {
+    position: absolute;
+    right: unset;
+    bottom: unset;
+    width: 300px;
+    padding: 10px;
+    box-shadow: 0 0 10px 0 #00000033;
+    background: white;
+    z-index: 2;
+    border-radius: 6px;
+}
+
+.vu-suggestion:not(.active) {
+    display: none;
+}
+
+.vu-suggestion .vu-option {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px 5px 0;
+    cursor: pointer;
+}
+
+.vu-suggestion .vu-option:not(.nomatch):last-of-type {
+    padding: 5px 10px 0px 0;
+}
+
+.vu-suggestion .vu-option:not(.nomatch):first-of-type {
+    padding: 0px 10px 5px 0;
+}
+
+.vu-suggestion .vu-option> :is(i, p) {
+    width: 32px;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.vu-suggestion .vu-option>i {
+    color: var(--fv_prime);
+    margin-right: 10px;
+}
+
+.vu-suggestion .vu-option>p {
+    color: var(--gray_500);
+    justify-content: end;
+}
+
+.vu-suggestion .vu-option .port {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.vu-suggestion .vu-option .port :is(h6, p) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vu-suggestion .vu-option .port h6 {
+    font-size: 1.4rem;
+}
+
+.vu-suggestion .vu-option .port p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gray_500);
+}
+
+.vu-suggestion .vu-option:not(.nomatch):not(:last-of-type) {
+    border-bottom: 1px dashed var(--gray_400);
+}
+
+.fare_type_box {
+    padding: 1rem;
+    margin-top: 20px;
+    background: linear-gradient(135deg,
+            rgb(133 202 235) 0%,
+            rgb(243 193 193 / 0%) 100%);
+    overflow: hidden;
+}
+
+.fare_type_box label {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.fare_type_box .fare_types {
+    width: 100%;
+    gap: 15px;
+    padding: 0 2rem;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.fare_type_box .fare_type {
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.fare_type_box .fare_type input {
+    margin-right: 5px;
+}
+
+.fare_type_box :is(p) {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+}
+
+.fare_type_box .fare_types .fare_type .ft_ra {
+    width: 100%;
+    border: 1px solid rgb(228, 228, 228);
+    background: rgb(255, 255, 255);
+    border-radius: 21px;
+    padding: 12px 13px;
+    display: flex;
+    position: relative;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+form .fare_type_box .fare_types .fare_type input[type="radio"] {
+    /* Hide the default radio button */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Define a custom size for the square */
+    width: 20px;
+    height: 20px;
+    /* Define a border and background for the square */
+    border: 1px solid var(--fv_prime);
+    background-color: #fff;
+    /* Position the square relative to its container */
+    position: relative;
+}
+
+/* Style for the checked state */
+form .fare_type_box .fare_types .fare_type input[type="radio"]:checked::before {
+    /* Create a pseudo-element to represent the checked state */
+    content: "";
+    /* Define the appearance of the pseudo-element (a square inside the square) */
+    width: 10px;
+    height: 10px;
+    background-color: var(--fv_sec);
+    /* Position the pseudo-element at the center of the square */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Ensure the pseudo-element is rendered above the square */
+    z-index: 1;
+}
+
+.passengers {
+    gap: 10px;
+    text-align: center;
+}
+
+.counter_title {
+    font-size: 1.3rem;
+}
+
+p.counter_desc {
+    font-size: 1rem;
+    margin-block: -4px 4px;
+}
+
+.counter,
+.counter_1 {
+    display: flex;
+    border-radius: 6px;
+    background: #002456;
+    padding: 2px;
+}
+
+.counter i,
+.counter_1 i {
+    width: 32px;
+    aspect-ratio: 1;
+    display: flex;
+    font-size: 1.3rem;
+    align-items: center;
+    justify-content: center;
+    background: #002456;
+    color: white;
+}
+
+.counter input,
+.counter_1 input {
+    width: 32px;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.package_box {
+    padding: 40px;
+}
+
+.package_box_header h6 {
+    position: relative;
+    font-size: 2rem;
+}
+
+.package_box_header h6::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background: #002456;
+    width: 30%;
+    height: 3px;
+    border-radius: 10px;
+}
+
+.package_box_header a {
+    color: var(--fv_sec);
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.package_box_header a i {
+    margin-left: 10px;
+}
+
+.pax .vu-suggest {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px !important;
+    box-shadow: 0 0 10px 0 #00000033;
+    background: white;
+    z-index: 2;
+    border-radius: 6px;
+    transform: translateY(calc(100% + 10px));
+}
+
+.pax:not(.active) .vu-suggest {
+    display: none;
+}
+
+.pax .vu-suggest .counters {
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.pax .vu-suggest .counters .count-wrap {
+    text-align: center;
+}
+
+.pax .vu-suggest .counters .count-wrap p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.pax .flight_classes {
+    margin-top: 20px;
+}
+
+.flight_classes label {
+    position: unset;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.tabs {
+    /* background-color: var(--fv_sec); */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    display: none;
+}
+
+.tabs a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: small;
+}
+
+.top-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.top-tabs span {
+    font-weight: bold;
+}
+
+.top-tabs li {
+    list-style-type: none;
+    border-radius: 6px;
+    padding: 5px;
+    background-color: #ffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    text-align: center;
+}
+
+.tabs img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.second-tabs {
+    list-style-type: none;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* offcanvas */
+.offcanvas::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: black;
+    opacity: 0.3;
+    z-index: 10;
+    display: none;
+}
+
+.offcanvas .text-box {
+    position: fixed;
+    inset: auto 0 0 0;
+    background-color: #fff;
+    z-index: 50;
+    padding: 2rem;
+    text-transform: capitalize;
+    border-radius: 10px 10px 0 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    animation: slideUp 2s;
+    display: none;
+}
+
+.x {
+    width: 25px;
+    height: 25px;
+    background: gray;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+
+.between {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.offcanvas h5 {
+    color: var(--fv_sec);
+}
+
+.offcanvas input {
+    padding: 1rem;
+    border-radius: 6px;
+    text-transform: capitalize;
+    text-align: center;
+    border: 1px solid gray;
+    font-size: large;
+    font-weight: bold;
+}
+
+.offcanvas button {
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: var(--fv_sec);
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.offcanvas a {
+    color: var(--fv_sec);
+}
+
+.offer-box {
+    overflow: hidden;
+    height: 30px;
+}
+
+.offer-window {
+    animation: scroller 5s infinite;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.offer-window li {
+    height: 30px;
+    padding-bottom: 8px;
+    color: var(--fv_sec);
+    font-weight: bold;
+    width: max-content;
+}
+
+
+form .search_btn {
+    right: auto;
+    left: 50%;
+    width: max-content;
+}
+
+.location {
+    position: relative;
+}
+
+.hotel_form .card {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rate {
+    font-size: 2rem;
+}
+
+.one {
+    color: red;
+}
+
+.two {
+    color: orange;
+}
+
+.three {
+    color: yellow;
+}
+
+.four {
+    color: lightgreen;
+}
+
+.five {
+    color: green;
+}
+
+.cou-option {
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #f7f7f7;
+    color: #000;
+}
+
+.cou-option:hover {
+    background-color: #f7f7f7;
+}
+
+.dates-wrap {
+    flex: 1;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes scroller {
+    25% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25%);
+    }
+
+    75% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(-75%);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .vu-suggestion {
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .fare_type_box .aic {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hotel_form .card {
+        flex-direction: row;
+    }
+
+    .rate {
+        font-size: 4rem;
+    }
+
+    form .trip_types {
+        position: static;
+        margin: 0;
+    }
+
+    .vu-select,
+    .dates,
+    .pax {
+        border-collapse: collapse;
+        border-width: 2px;
+        border-radius: 0;
+        background: #f7f7f7;
+    }
+
+    .vu-content {
+        padding: 0;
+    }
+
+    .col-6 {
+        flex: 0 0 auto !important;
+        width: 50% !important;
+    }
+
+    .col-5,
+    .col-4,
+    .col-3 {
+        width: auto;
+    }
+
+    .dates .col-6:first-child {
+        border-right: 4px solid rgb(225, 231, 238);
+    }
+
+    form .fields,
+    form .fields .wrapper {
+        gap: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    :is(.vu-select, .vu-date, .pax) label {
+        top: -4px;
+        background-color: transparent;
+    }
+
+    .fields {
+        flex-direction: column;
+    }
+
+    header nav li a:has(img) span {
+        display: none;
+    }
+
+    .destiantions .wrapper {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .fare_type_box {
+        gap: 0;
+        margin: 0;
+    }
+
+    .ft_ra {
+        padding: 1rem;
+        width: max-content !important;
+    }
+
+    .trip_types {
+        flex-direction: row;
+        padding: 1rem 0;
+        align-items: center;
+        position: static !important;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    .offcanvas::after {
+        display: block;
+    }
+
+    .offcanvas .text-box {
+        display: flex;
+    }
+
+    .forms_wrapper .form_types .form_type {
+        font-size: 1.4rem;
+    }
+
+    .forms_wrapper .form_types .form_type i {
+        margin: 0 0 5px 0;
+    }
+
+    .offcanvas form .fields {
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+
+    form .fields>.destiantions {
+        width: 100%;
+        padding: 0 !important;
+    }
+
+    form .fields>.destiantions .wrapper {
+        padding: 0 !important;
+    }
+
+    form .fields> :is(.dates-wrap, .paxs) {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .forms_wrapper .form_types {
+        transform: translate(0);
+        box-shadow: none;
+        border-radius: 10px 10px 0 0;
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid rgb(225, 231, 238);
+    }
+
+
+    .forms_wrapper .form_types .form_type {
+        flex: 1;
+        border-radius: 0;
+    }
+
+    .forms_wrapper form {
+        padding: 0;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+    }
+
+    form .search_btn {
+        position: relative;
+        transform: translate(0);
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        padding: 2rem;
+    }
+
+    .trip_types,
+    header .aic.rflex {
+        flex-direction: row !important;
+        padding: 1rem;
+    }
+
+
+    .support_point {
+        margin: 0;
+    }
+
+    section.aboutus {
+        padding: 0 !important;
+    }
+
+    .res-display {
+        display: none;
+    }
+
+    .tabs {
+        display: flex;
+    }
+
+    .ft_ra {
+        gap: 1rem;
+    }
+
+    .ft_ra img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .fare_type_box b {
+        display: inline-block;
+        width: max-content;
+        font-weight: 600;
+    }
+
+    .fare_type_box {
+        padding: 4px 1rem;
+        font-weight: 600;
+    }
+
+    .pax .desc,
+    :is(.vu-select, .vu-date) input {
+        font-size: small;
+    }
+
+    form .trip_types .trip_type {
+        width: max-content;
+    }
+
+    .offer-window li {
+        font-size: small;
+    }
+
+    .vu-select,
+    .vu-content {
+        padding: 1rem 0;
+        font-size: small;
+    }
+
+    .dates-wrap .wrapper .col-6+.col-6 {
+        margin: 0 !important;
+    }
+
+    .trip_types {
+        flex-direction: column-reverse !important;
+        gap: 1rem;
+    }
+
+    .forms_wrapper {
+        padding: 1rem;
+    }
+
+    .forms_wrapper .form_types .form_type {
+        padding: 5px;
+    }
+
+    .forms_wrapper .form_types .form_type i {
+        --dim: 32px;
+        margin: 0;
+        font-size: 1.4rem;
+    }
+
+    .forms_wrapper .form_types .form_type p {
+        display: none;
+    }
+
+    .destination .details .detail {
+        padding: 2px !important;
+    }
+
+    .rate {
+        font-size: 3rem;
+    }
+
+    .pax .vu-suggest {
+        padding: 1rem !important;
+    }
+
+    .pax .vu-suggest .counters {
+        gap: 4px;
+    }
+    .counter i {
+        width: 20px;
+    }
+}

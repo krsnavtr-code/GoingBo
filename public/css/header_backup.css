@@ -1,0 +1,67 @@
+body {
+    background: var(--sec_bg);
+}
+header {
+    --height: 80px;
+    position: sticky;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+}
+header .main_header {
+    height: var(--height);
+    padding: 15px 30px;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px 0 #00000000;
+}
+header.scrolled .main_header {
+    background: white;
+    box-shadow: 0 0 20px 0 #00000033;
+}
+header a.brand {
+    display: inline-block;
+    height: 100%;
+}
+header a.brand img {
+    height: 100%;
+}
+header nav {
+    gap: 6px;
+}
+header nav a {
+    display: inline-block;
+    font-weight: 500;
+    padding: 8px 15px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    position: relative;
+    color: var(--fv_sec);
+}
+header nav a .logo{
+    position: absolute;
+    rotate: -45deg;
+    font-size: 0.7em;
+    font-weight: 700;
+    left: 0;
+    top: 0;
+}
+header nav a .logo span:first-of-type{
+    color: var(--fv_sec);
+}
+header nav a .logo span:last-of-type{
+    color: var(--fv_prime);
+}
+header .sec_nav a {
+    padding: 8px 25px;
+    background: #efefef;
+    color: var(--fv_sec);
+    transition: all 0.3s;
+}
+header .sec_nav a:hover,
+header .sec_nav a.prime {
+    color: white;
+    background: var(--fv_sec);
+}
+header .sec_nav a.prime:hover {
+    background: #00699d;
+}

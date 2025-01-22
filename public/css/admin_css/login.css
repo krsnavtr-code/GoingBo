@@ -1,0 +1,67 @@
+main{
+    background: var(--prime_bg);
+}
+form {
+    padding-inline: 30px;
+    width: min(350px, 100%);
+}
+form h1 {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    margin-block: 15px 20px;
+    color: var(--info_comp);
+}
+form h1 span {
+    opacity: 0.15;
+    animation: blink 4s linear calc(var(--i) * 0.1s) infinite;
+}
+form img {
+    height: 60px;
+    margin-inline: auto;
+    filter: drop-shadow(2px 2px 1px #00000033);
+}
+form input {
+    border-radius: 7px;
+    border: none;
+    background: var(--sec_bg);
+    font-size: 1.4rem;
+    width: 100%;
+    color: var(--prime_text);
+    padding: 10px 20px;
+    font-weight: 600;
+    margin-block: 10px;
+}
+form input:focus {
+    outline: 2px solid #0094de66;
+}
+form button {
+    border: none;
+    align-self: flex-end;
+    padding: 8px 20px;
+    border-radius: 7px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    color: var(--font_white_prime);
+    background: var(--info);
+    margin-top: 10px;
+    box-shadow: 2px 2px 0 0 var(--shadow_22);
+}
+form button:hover {
+    color: white;
+    background: var(--info_dark);
+}
+form button:focus {
+    animation: click 0.4s linear 1 forwards;
+}
+form p.error {
+    text-align: right;
+    margin: -5px 0 10px 0;
+    display: block;
+    border-radius: 7px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: rgb(var(--error_rgb));
+}

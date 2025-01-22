@@ -1,0 +1,562 @@
+i.text {
+    font-size: 0.7em;
+}
+i.text.info {
+    color: var(--info_dark);
+}
+i.text.error {
+    font-size: 0.8em;
+    color: var(--error_dark);
+    font-weight: 600;
+}
+form {
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+}
+form .main_content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+form .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 310px;
+    flex-shrink: 0;
+    height: max-content;
+    position: sticky;
+    top: 80px;
+}
+form .sidebar .panels {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+form .panel {
+    box-shadow: 0 0 20px 0 #00000033;
+    border-radius: 6px;
+    padding: 20px;
+    background: white;
+    border-bottom: 6px solid #002346;
+}
+form .main_content .panel_group {
+    box-shadow: 0 0 20px 0 #00000033;
+    border-radius: 6px;
+    overflow: hidden;
+}
+form .main_content .panel_group .panel {
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: none;
+}
+form .main_content .panel_group .panel:not(:first-of-type):last-of-type {
+    border-bottom: none;
+}
+form .main_content .panel_group .panel:first-of-type:last-of-type {
+    border-bottom: 6px solid #002346;
+}
+form button {
+    padding: 9px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    background: var(--fv_prime);
+    border-radius: 6px;
+    border: none;
+}
+.main_content .flights .extra_info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 7px;
+    margin-top: 10px;
+    background: rgba(var(--fv_sec_rgb), 0.2);
+}
+.main_content .flights .extra_info .info {
+    display: flex;
+    gap: 20px;
+}
+.main_content .flights .extra_info .info p {
+    display: flex;
+    align-items: center;
+}
+.main_content .flights .extra_info .info p span {
+    margin-left: 5px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: var(--fv_sec);
+}
+.main_content .flights .ground {
+    padding: 10px;
+    color: white;
+    background: #002346;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-align: center;
+}
+.main_content .flights .airline {
+    display: flex;
+    justify-content: space-between;
+}
+.main_content .flights .airline h6 {
+    color: var(--fv_sec);
+    font-size: 0.8em;
+}
+.main_content .flights .airline p {
+    font-size: 0.8em;
+    font-weight: 600;
+    font-style: italic;
+}
+.main_content .flights .airline h6 span {
+    color: var(--gray_700);
+    font-size: 0.7em;
+}
+.main_content .flights .location {
+    display: flex;
+    flex-direction: column;
+}
+.main_content .flights .destination {
+    text-align: right;
+    align-items: right;
+}
+.main_content .flights .flight_details {
+    display: flex;
+}
+.main_content .flights .flight_details .flight_time {
+    flex-grow: 1;
+}
+.main_content .flights .flight_details .city_code {
+    color: var(--fv_prime);
+}
+.main_content .flights .flight_details .city_code span {
+    font-size: 0.7em;
+    color: var(--gray_700);
+}
+.main_content .flights .flight_details .city {
+    font-size: 1.2rem;
+    margin-top: -3px;
+}
+.main_content .flights .flight_details .city span {
+    font-weight: 600;
+}
+.main_content .flights .flight_details .time {
+    font-size: 1.7rem;
+    margin-top: 5px;
+}
+.main_content .flights .flight_details .time span {
+    font-size: 0.6em;
+    margin-left: 5px;
+}
+.main_content .flights .flight_details .flight_time {
+    border: 1px dashed;
+    margin-block: auto;
+    height: 0px;
+    margin-inline: 20px;
+    position: relative;
+}
+.main_content .flights .flight_details .flight_time i {
+    position: absolute;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding-inline: 5px;
+    opacity: 0;
+    animation: move_flight 6s linear infinite forwards;
+}
+form fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    gap: 10px;
+}
+form fieldset .field_group {
+    display: flex;
+    gap: 10px;
+}
+form fieldset .field_group .field {
+    flex-grow: 1;
+}
+form .field {
+    display: flex;
+    flex-direction: column;
+}
+form .field :is(input, select) {
+    border-radius: 5px;
+    outline: none;
+    background: none;
+    width: 100%;
+    padding: 7px 14px;
+    border: 2px solid var(--gray_300);
+    font-weight: 400;
+}
+form .field input::placeholder {
+    color: var(--gray_500);
+}
+form .field input:focus {
+    font-weight: 600;
+    border: 2px solid #002346;
+}
+form .field label {
+    margin-bottom: 5px;
+    font-size: 0.6em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+form fieldset.traveller {
+    margin-top: 15px;
+}
+form fieldset.traveller:not(:last-of-type) {
+    padding-bottom: 15px;
+    border-bottom: 2px dashed #002346;
+}
+form fieldset.traveller .field_group {
+    flex-wrap: wrap;
+}
+form fieldset.traveller .field {
+    min-width: 240px;
+}
+form fieldset.traveller .fields .passport {
+    margin-block: 5px 15px;
+}
+form fieldset.traveller .fields .passport .field {
+    min-width: 180px;
+}
+form fieldset.contact {
+    margin-top: 15px;
+}
+form fieldset.contact .field_group {
+    flex-wrap: wrap;
+}
+form fieldset.contact .field {
+    min-width: 250px;
+}
+form fieldset.address {
+    margin-top: 20px;
+}
+form fieldset.address .field_group {
+    flex-wrap: wrap;
+}
+form fieldset.address .field {
+    min-width: 250px;
+}
+form fieldset.company {
+    margin-top: 15px;
+}
+form fieldset.company .field_group {
+    flex-wrap: wrap;
+}
+form fieldset.company .field {
+    min-width: 250px;
+}
+.fares {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.fares .fare {
+    display: flex;
+    flex-direction: column;
+}
+.fares .fare .mini_total {
+    margin-left: auto;
+    font-weight: 600;
+}
+.fares .fare .mini_total span {
+    font-weight: 400;
+    color: var(--gray_600);
+    margin-right: 4px;
+    font-size: 0.7em;
+}
+.fares .fare_title {
+    color: var(--fv_prime);
+    font-weight: 600;
+}
+.fares .fare_desc {
+    margin-block: 5px;
+}
+.fares .desc {
+    display: flex;
+    justify-content: space-between;
+}
+.fares .desc p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gray_600);
+}
+.fares .total {
+    border-top: 2px dashed #002346;
+    padding-top: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.fares .total p {
+    font-weight: 600;
+}
+.rules_panel .panel:first-of-type {
+    border-bottom: 6px solid #002346 !important;
+}
+.rules_panel .panel .rules {
+    display: none;
+}
+.rules_panel .panel.active .rules {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    gap: 10px;
+}
+.rules_panel .panel .rules .rule {
+    flex-grow: 1;
+    min-width: 250px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: rgba(var(--fv_prime_rgb), 0.2);
+}
+.rules_panel .panel .rules span b {
+    font-size: 0.8em;
+}
+.rules_panel .panel .rules table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.rules_panel .panel .rules ul {
+    margin-left: 25px;
+}
+.rules_panel .panel .rules ul table {
+    background: rgba(var(--fv_prime_rgb), 0.2);
+    margin-block: 15px;
+}
+.rules_panel .panel .rules ul:last-of-type {
+    font-size: 0.8em;
+}
+.rules_panel .panel .rules br {
+    display: none;
+}
+.rules_panel .panel .rules span {
+    display: block;
+}
+.rules_panel .panel .rules > b {
+    margin-left: 25px;
+}
+.rules_panel .panel .rules table:not(:has(thead)) tbody tr:first-child,
+.rules_panel .panel .rules table thead {
+    background: rgba(var(--fv_prime_rgb), 0.2);
+}
+.rules_panel .panel .rules table :is(th, td) {
+    text-align: left;
+    padding: 6px 20px;
+}
+.rules_panel .panel .rules table td {
+    font-size: 0.8em;
+    font-weight: 600;
+}
+.addon.hide {
+    display: none;
+}
+.btn_group {
+    display: flex;
+    width: max-content;
+    margin-inline: auto;
+    padding: 3px;
+    border-radius: 6px;
+    margin-top: 20px;
+    background: rgba(var(--fv_prime_rgb), 0.2);
+}
+.btn_group button {
+    width: 100px;
+    border-radius: 5px;
+    background: none;
+    font-size: 1.2rem;
+}
+.btn_group button.active {
+    background: rgba(var(--fv_prime_rgb), 0.6);
+}
+.vu-select {
+    position: relative;
+}
+.vu-select:not(.active) .vu-suggestion {
+    display: none;
+}
+.vu-select .vu-suggestion {
+    position: absolute;
+    top: 100%;
+    transform: translateY(5px);
+    box-shadow: 0 0 20px 0 #00000033;
+    border-radius: 6px;
+    padding: 3px;
+    font-size: 0.8em;
+    z-index: 1;
+    background: white;
+    width: 100%;
+    font-weight: 600;
+}
+.vu-select .vu-suggestion .unmatch {
+    display: none;
+}
+.vu-select .vu-suggestion .vu-option {
+    padding: 7px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.vu-select .vu-suggestion .vu-option:hover {
+    background: rgba(var(--fv_prime_rgb), 0.2);
+}
+button.seat {
+    margin-top: auto;
+    font-size: 1.3rem;
+    background: rgba(var(--fv_sec_rgb), 0.4);
+}
+.seat_layout:not(.active) {
+    display: none;
+}
+.seat_layouts {
+    display: flex;
+    flex-direction: column-reverse !important;
+}
+.seat_layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 40px 5px 40px 5px;
+}
+.seat_layout .info {
+    gap: 30px;
+    position: sticky;
+    top: 20px;
+    height: min-content;
+}
+.seat_layout .design_info {
+    gap: 10px;
+}
+.seat_layout .design_info p {
+    font-size: 0.6em;
+}
+.seat_layout .seats {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.seat_layout .seat_row {
+    display: flex;
+    gap: 5px;
+}
+.seat_layout .seat_row .gallery {
+    width: 10px;
+}
+.seat_layout .seat {
+    position: relative;
+    cursor: pointer;
+}
+.seat_plane,
+.seat_layout .seat .seat_design {
+    border: 2px solid;
+    width: 24px;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    justify-content: center;
+}
+.seat_plane:not(:has(span)),
+.seat_layout .seat.free .seat_design {
+    border-color: var(--gray_400);
+}
+.seat_layout .seat.booked .seat_design {
+    background: var(--error);
+    border-color: var(--error);
+    color: white;
+}
+.seat_plane span {
+    font-size: 0.5em;
+    font-weight: 600;
+}
+.seat_plane:has(span),
+.seat_layout .seat.selected .seat_design {
+    background: var(--fv_sec);
+    color: white;
+    border-color: var(--fv_sec);
+    font-size: 1.3em;
+}
+.seat_layout .seat .seat_design span {
+    font-size: 0.5em;
+    font-weight: 600;
+}
+.seat_layout .seat .seat_design i {
+    width: unset;
+    font-size: 0.8em;
+}
+.seat_layout .seat .tooltip {
+    background: rgba(var(--fv_sec_rgb), 1);
+    font-size: 0.5em;
+    font-weight: 600;
+    white-space: nowrap;
+    border-radius: 5px;
+    padding: 2px 6px;
+    margin-bottom: 4px;
+    bottom: 100%;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.seat_layout .seat:not(:not(.booked):hover) .tooltip {
+    display: none;
+}
+@keyframes move_flight {
+    0%,
+    100% {
+        opacity: 0;
+        font-size: 0rem;
+    }
+    0% {
+        left: 0%;
+    }
+    35%,
+    65% {
+        font-size: 1.6rem;
+    }
+    100% {
+        left: 100%;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 1050px) {
+    form {
+        flex-direction: column;
+        padding: 30px 15px;
+    }
+    form .sidebar .panels {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    form .sidebar .panel {
+        flex-grow: 1;
+        min-width: 310px;
+    }
+    .main_content .flights .flight_details .city {
+        width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .main_content .flights .flight_details .flight_time {
+        visibility: hidden;
+    }
+    .main_content .flights .extra_info {
+        padding: 10px;
+    }
+    .main_content .flights .extra_info .info {
+        display: flex;
+        gap: 10px;
+    }
+    .main_content .flights .extra_info .info p {
+        font-size: 0.7em;
+    }
+}

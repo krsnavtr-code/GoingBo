@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: Lato,Arial,Verdana;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #808B8D;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: Lato,Arial,Verdana;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #2C3E50;
+}
+.gy5gx4{
+	margin-top:30px;
+}
+.px44 {
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+    height: 224px;
+}
+.btn-primary {
+    color: #000;
+    background-color: #0094de;
+    border-color: #0094de;
+}
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #0094de;
+    transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out;
+}
+a {
+    color: #0094de;
+    text-decoration: none;
+}
+.bg-dark {
+    background-color: #0094de !important;
+}
+.g333{
+    margin-top: -120px;
+}
+.display-3 {
+    font-size: 22px;
+}
+.pt-lg-5 {
+    padding-top: 3px !important;
+}
+.mt-lg-5 {
+    margin-top: 3px !important;
+}
+.text-primary {
+    color: #0094de !important;
+}
+.bg-primary {
+    background-color: #0094de !important;
+}
+.border-primary {
+    border-color: #0094de !important;
+}
+.btn-check:checked+.btn-primary, .btn-check:active+.btn-primary, .btn-primary:active, .btn-primary.active, .show>.btn-primary.dropdown-toggle {
+    color: #000;
+    background-color: #0094de;
+    border-color: #0094de;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0094de;
+    border-color: #0094de;
+}
+h1, .h1 {
+    font-size: 29px;
+}
+h3 {
+    font-size: 25px;
+    color: #00b5e0;
+    font-family: GothamBold;
+    text-align: center;
+}
+.marginbottom50 {
+    margin-bottom: 50px;
+}
+.destinationP {
+    text-align: center;
+    font-size: 1rem;
+    font-family: GothamBold;
+}
+.ClubPackage{
+    width: 100%;
+    height: 210px;
+}
+.GoingboExperience{
+    padding:50px 0px 50px 0px;
+}
+.TheGoingboex{
+    color:#fff !important;
+    font-size:20px !important;
+}
+.WonderFulme{
+    background-color:#0094dec7;
+    padding: 25px 20px 25px 20px;
+}
+.form-floating>.form-control, .form-floating>.form-select {
+    height: 30px;
+    padding: 10px;
+}
+.form-floating>.form-control:focus, .form-floating>.form-control:not(:placeholder-shown) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+@media (min-width: 1200px){
+    .container {
+        max-width: 1200px;
+    }
+}

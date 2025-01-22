@@ -1,0 +1,17 @@
+@extends('admin.components.layout')
+@section('main')
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+@endsection

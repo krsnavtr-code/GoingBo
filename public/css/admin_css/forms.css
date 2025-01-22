@@ -1,0 +1,227 @@
+section .section_title {
+    font-size: 2rem;
+    color: var(--prime_text);
+}
+section .section_sub_title {
+    font-size: 1.4rem;
+    color: var(--sec_text);
+}
+form {
+    --gutter: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter);
+}
+.page_title,
+form .form_title {
+    font-size: 2.6rem;
+    color: var(--prime_text);
+}
+.page_sub_title{
+    margin-bottom:10px;
+}
+.page_sub_title,
+form .form_sub_title {
+    font-size: 1.6rem;
+    color: var(--sec_text);
+}
+form section {
+    --gutter: 10px;
+    box-shadow: 0 0 30px 0 #00000033;
+    background: var(--sec_bg);
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter);
+}
+form .field,
+form .field_group {
+    display: flex;
+}
+form .field {
+    flex-direction: column;
+}
+form .field_group {
+    gap: var(--gutter);
+    flex-wrap: wrap;
+}
+form .field_group .field {
+    flex-grow: 1;
+    min-width: 150px;
+}
+form .field.radio,
+form .field.checkbox {
+    align-items: center;
+    flex-direction: row;
+}
+form .field label {
+    width: 100%;
+    padding: 0 0 5px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+form label {
+    color: var(--prime_text);
+}
+form .field :where(input, select, textarea) {
+    width: 100%;
+    min-width: 0;
+    padding: 8px 20px;
+    background: var(--prime_bg);
+    border: 1px solid var(--sec_text);
+    border-radius: 4px;
+    color: var(--prime_text);
+}
+form .field.radio input[type="radio"],
+form .field.checkbox input[type="checkbox"] {
+    margin-right: 15px;
+    flex-shrink: 0;
+    width: unset;
+}
+form .field.radio label,
+form .field.checkbox label {
+    padding: 0;
+}
+form .field.occupied {
+    color: var(--warn_dark);
+}
+form .field.occupied input[type="checkbox"]:checked {
+    accent-color: var(--warn_dark);
+}
+form .field.disabled {
+    color: var(--gray_500);
+    cursor: not-allowed;
+}
+form .field.disabled > * {
+    cursor: not-allowed;
+}
+form .field p.error{
+    font-size: 1.2rem;
+    color: var(--error);
+    font-weight: 600;
+    margin-top: 3px;
+}
+form .append_flag {
+    display: none;
+}
+form .section_options {
+    gap: var(--gutter);
+}
+form .section_options i {
+    --dim: 38px;
+    cursor: pointer;
+    background: var(--warn);
+    border: 2px solid var(--warn_dark);
+    border-radius: 4px;
+}
+form i.text {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+form i.prime {
+    color: var(--prime);
+}
+form i.success {
+    color: var(--success);
+}
+form i.error {
+    color: var(--error_dark);
+}
+form i.info {
+    color: var(--info_dark);
+}
+form i.warn {
+    color: var(--warn_dark);
+}
+form .section_options span.btn {
+    border: 2px solid var(--warn_dark);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    background: var(--warn);
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: auto;
+}
+form button {
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    background: var(--prime);
+    box-shadow: 0 0 30px 0 #00000033;
+    transition: all 0.2s;
+}
+form button:hover {
+    background: var(--prime_dark);
+    box-shadow: 0 0 20px 0 #00000033;
+    transform: translate(2px, 2px);
+}
+@media screen and (max-width: 800px) {
+    form section {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 30px 0 #00000022;
+    }
+}
+.profile_pic img {
+    --dim: 250px;
+    height: var(--dim);
+    width: var(--dim);
+    border-radius: 1000px;
+}
+.field.profile_pic label {
+    border-radius: 1000px;
+    box-shadow: 0 0 40px 0 #00000044;
+    position: relative;
+    margin-bottom: 40px;
+    padding: 8px;
+    animation: rotate_pic_box 2s cubic-bezier(0.26, 1.26, 1, 1) 100ms 1 forwards;
+}
+.profile_pic label::after {
+    content: "";
+    height: 10px;
+    width: 100%;
+    top: 100%;
+    position: absolute;
+    background: #00000022;
+    border-radius: 80%;
+    transform: translateY(200%);
+    filter: blur(2px);
+}
+
+label .display{
+    padding: 10px;
+    background: var(--prime_bg);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gray_500);
+}
+label .display img{
+    margin-inline: auto;
+    max-height: 200px;
+}
+label.loaded .display span{
+    display: none;
+}
+.hidden{
+    display: none;
+}
+@keyframes rotate_pic_box {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(720deg);
+    }
+}

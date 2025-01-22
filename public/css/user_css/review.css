@@ -1,0 +1,90 @@
+.review-form {
+    width: 100%;
+}
+
+.review-form .date-box {
+    text-align: center;
+}
+
+.review-form h2 {
+    font-size: large;
+    margin: 1rem 0;
+}
+
+input {
+    padding: 1rem;
+    text-transform: capitalize;
+    border-radius: 10px;
+    background: #f9f9f9;
+    color: #000;
+    border: none;
+    border: 1px solid gainsboro;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    flex: 1;
+    outline-color: var(--fv_sec);
+    display: block;
+}
+
+.review-form .panel {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 1px solid gainsboro;
+}
+
+.panel .between {
+    align-items: center;
+}
+
+.fields {
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.review-btn {
+    background: var(--fv_sec);
+    color: #fff;
+    padding: 1rem 3rem;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 50px;
+    border: none;
+    font-size: large;
+}
+
+.review-form p {
+    font-size: small;
+    color: gray;
+}
+
+.side_panels {
+    margin: 0;
+    padding: 3rem 0;
+}
+
+.query-box {
+    margin: 0;
+}
+
+@media only screen and (max-width:600px) {
+    .fields {
+        grid-template-columns: 1fr;
+    }
+
+    .review-form .between {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .review-form .date-box {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .review-btn {
+        font-size: small;
+    }
+
+}

@@ -1,0 +1,865 @@
+body {
+    scroll-behavior: smooth;
+    text-transform: capitalize;
+}
+
+.row>div {
+    display: block;
+}
+
+main {
+    padding: 4rem 0;
+}
+
+/* section {
+    border-bottom: 2px solid gainsboro;
+} */
+
+.grid-banner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1rem;
+    align-items: stretch;
+    position: relative;
+    /* height: 70vh; */
+    overflow: hidden;
+}
+
+.grid-banner :first-child {
+    grid-row: 2 span;
+}
+
+.grid-banner img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.grid-banner .badge {
+    padding: 1rem 2rem;
+    margin: 2rem 1rem;
+    background-color: #000000a6;
+    color: #fff;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    inset: auto 0 0 auto;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.grid-banner .badge:hover {
+    background-color: #000;
+}
+
+
+/* grid end */
+/* text */
+.hotel-page h3 {
+    margin: 1rem 0;
+}
+
+.hotel-page p {
+    font-weight: 400;
+}
+
+.hotel-page button {
+    margin: 1rem 0;
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-evenly;
+    text-transform: capitalize;
+    color: blue;
+    cursor: pointer;
+}
+
+.hotel-page .headline {
+    width: auto;
+    gap: 1rem;
+    width: 70%;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.hotel-page .title {
+    font-size: 30px;
+    max-width: 75%;
+}
+
+.hotel-page .reviews img {
+    width: 30px;
+}
+
+.hotel-page .badges {
+    align-items: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000;
+}
+
+.hotel-page .pin {
+    height: 40px;
+}
+
+#vom {
+    font-size: 14px;
+    color: blue;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.rate {
+    padding: 1rem;
+}
+
+.hotel-page .sub {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.hotel-page .address {
+    flex-wrap: nowrap;
+}
+
+.hotel-page .address p {
+    display: flex;
+    gap: 5px;
+    font-weight: 600;
+    color: #000;
+}
+
+.hotel-page .badges{
+    flex-wrap: nowrap;
+}
+
+.hotel-page .condition {
+    font-weight: 600;
+    font-size: medium;
+}
+
+.hotel-nav {
+    border-bottom: 1px solid gray;
+    position: sticky;
+    top: 5rem;
+    background: #fff;
+    z-index: 2;
+}
+
+.hotel-nav .container {
+    padding: 0;
+}
+
+.hotel-nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.hotel-nav li {
+    padding: 0.6rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    border: 2px solid transparent;
+}
+
+.hotel-nav li:visited,
+.hotel-nav li:active,
+.hotel-nav li:hover {
+    color: blue;
+    border-bottom: 2px solid blue;
+}
+
+/* #overview */
+#overview {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+#overview h2 {
+    font-size: 2.8rem;
+}
+
+#overview .facilities {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#overview .facilities li {
+    width: 160px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    text-align: center;
+}
+
+.row {
+    align-items: center;
+}
+
+#overview .facilities span {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(234, 231, 250);
+    color: gray;
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+.recommended {
+    height: max-content;
+    border: 2px solid #dcdcdc;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.recommended img {
+    width: 100%;
+    height: 230px;
+}
+
+.recommended .text-box {
+    padding: 1rem;
+}
+
+.recommended .deal {
+    font-size: 12px;
+    display: block;
+    border: 1px solid blue;
+    color: blue;
+    background-color: #ffffff4e;
+    padding: 6px 1rem;
+    white-space: nowrap;
+    text-transform: capitalize;
+    border-radius: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1rem;
+}
+
+del {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.room-card .card-box {
+    display: flex;
+}
+
+.room-card .end {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.hotel-page .reserve {
+    text-align: center;
+    width: 200px;
+    background: orange;
+    opacity: 0.7;
+    color: #fff;
+    display: block;
+    padding: 1rem;
+    border-radius: 50px;
+    text-transform: capitalize;
+    font-size: medium;
+}
+
+.recommended .reserve {
+    margin: auto;
+}
+
+.room-card .reserve:hover {
+    opacity: 1;
+}
+
+.hotel-page .option-card .reserve,
+.hotel-page .recommended button:active {
+    transform: scale(0.9);
+}
+
+
+
+.hotel-page .panal {
+    background-color: #f9f9f9;
+}
+
+/* rooms */
+.rooms {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.room-card {
+    padding: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 20px;
+    background: #fff;
+    display: flex;
+}
+
+.hotel-page .room-card .img-box,
+.hotel-page .room-card .img-box img {
+    min-width: 300px;
+    min-height: 250px;
+    width: 300px;
+    height: 100%;
+}
+
+
+.room-card .text-box {
+    padding: 0 2rem;
+}
+
+.features,
+.specialty {
+    padding: 1rem;
+    padding-left: 3rem;
+    display: flex;
+    gap: 4px 2rem;
+    flex-wrap: wrap;
+    list-style-type: none;
+    text-transform: capitalize;
+}
+
+.specialty {
+    padding-left: 1rem;
+}
+
+.specialty li {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+}
+
+.off-badge {
+    margin: 1rem;
+    width: 140px;
+    color: red;
+    background: pink;
+    border: 1px solid red;
+    border-radius: 50px;
+    padding: 4px;
+    text-align: center;
+}
+
+
+.reserve {
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+/* location */
+#location .flex {
+    align-items: start;
+}
+
+.map-btn {
+    color: rgb(255, 107, 107);
+    background-color: rgb(255, 222, 249);
+    border-radius: 6px;
+    padding: 5px 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.map {
+    width: 100%;
+    border-radius: 20px;
+    margin: 1rem 0;
+    border: none;
+    outline: none;
+}
+
+/* reviews */
+#reviews {
+    display: flex;
+    gap: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    border-radius: 50px;
+    background: gainsboro;
+    overflow: hidden;
+}
+
+.progress {
+    width: 70%;
+    height: 100%;
+    background: blue;
+}
+
+.review-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-transform: capitalize;
+}
+
+.review-meta h2 {
+    color: blue;
+    font-size: 2.6rem;
+    margin: 0;
+}
+
+.review-meta h5 {
+    color: blue;
+    font-size: 16px;
+}
+
+#reviews h6,
+#reviews small {
+    font-size: 14px;
+    color: gray;
+    font-weight: 400;
+}
+
+#reviews figure {
+    margin: 2rem 0;
+}
+
+.col-8 {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+#reviews .tags {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    list-style-type: none;
+    gap: 1rem;
+    scrollbar-width: 0px;
+    padding: 1rem 0;
+    border-bottom: 1px solid gainsboro;
+
+}
+
+#reviews h2 {
+    text-transform: capitalize;
+}
+
+#reviews .tags::-webkit-scrollbar {
+    display: none;
+}
+
+.tags li {
+    border: 1px solid gray;
+    color: gray;
+    padding: 4px 0.6rem;
+    border-radius: 50px;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.tags li:active,
+.tags li:hover {
+    border: 1px solid blue;
+    color: blue;
+}
+
+.review {
+    padding: 1rem 0;
+    border-bottom: 1px solid gainsboro;
+}
+
+
+
+.review h4 {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+.review p {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 1rem 0;
+}
+
+.review img {
+    border-radius: 50%;
+}
+
+.review .badge {
+    padding: 0.2rem 0.4rem;
+    line-height: 1rem;
+    border-radius: 4px;
+    background: lightblue;
+    color: blue;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
+.review .user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.review .user span {
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: gray;
+}
+
+/* facilities */
+.hotel-page h2 {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+#facilities .box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+#facilities h4 {
+    text-transform: capitalize;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+#facilities li {
+    list-style-type: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+/* policies */
+#policies {
+    text-transform: capitalize;
+}
+
+#policies .box>div {
+    padding: 1.5rem 0;
+}
+
+#policies .box>div:not(:last-child) {
+    border-bottom: 1px solid gainsboro;
+}
+
+
+
+#policies h4 {
+    width: 300px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.4;
+    text-transform: capitalize;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+}
+
+#policies h5 {
+    text-transform: capitalize;
+    font-size: 16px;
+    margin: 0.5rem 0;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.extra p {
+    font-size: 14px
+}
+
+.Property {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 1rem;
+}
+
+#policies article {
+    width: 80%;
+}
+
+/* similer */
+#similer .box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#similer .card img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+#similer .card {
+    max-width: 500px;
+    padding: 1rem;
+    border: 2px solid gainsboro;
+    border-radius: 20px;
+}
+
+#similer .title {
+    font-size: medium;
+    width: 69%;
+}
+
+#similer .address,
+#similer .head {
+    margin: 5px 0;
+    display: flex;
+}
+
+#similer .body {
+    display: flex;
+    gap: 1rem;
+}
+
+#similer .end {
+    margin: 0;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+}
+
+#similer p {
+    white-space: nowrap;
+}
+
+#similer strong {
+    font-size: 20px;
+}
+
+/* form data */
+.offcanvas {
+    position: fixed;
+    inset: 0;
+    background-color: #00000093;
+    z-index: 50;
+
+    display: flex;
+    display: none;
+
+}
+
+.offcanvas .img-box {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.offcanvas img {
+    width: 40%;
+    height: auto;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.offcanvas .text-box {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 50%;
+    background: #fff;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transform: translateX(100%);
+    transition: all 1s linear;
+}
+
+.offcanvas .inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.show {
+    transform: translateX(0) !important;
+}
+
+.offcanvas select,
+.offcanvas input {
+    padding: 1rem;
+    text-transform: capitalize;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    color: gray;
+    border: none;
+    outline-color: orange;
+}
+
+#off-btn {
+    display: flex;
+    color: #fff;
+    background: orange;
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 6px;
+    opacity: 0.7;
+}
+
+.offcanvas .x {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: #000;
+    margin-left: auto;
+}
+
+#off-btn:hover {
+    opacity: 1;
+}
+
+.room-slider img {
+    max-height: 200px;
+}
+
+@media only screen and (max-width:768px) {
+    .rooms {
+        flex-direction: column;
+        justify-content: center;
+        font-size: small;
+    }
+
+    .col-4 {
+        width: 100%;
+    }
+
+    .room-card {
+        flex-direction: column;
+    }
+    .hotel-page .room-card .img-box img,
+    .hotel-page .room-card .img-box {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .recommended .reserve {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 1rem;
+    }
+
+    .hotel-page {
+        font-size: small;
+    }
+
+    #overview .facilities li {
+        width: 130px;
+    }
+
+    .col-8 {
+        width: 100%;
+    }
+
+    .room-card .flex,
+    .between {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .headline,
+    .title {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .hotel-page .sub {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .hotel-page .address {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    #reviews,
+    .hotel-page .address p,
+    #overview {
+        display: block;
+    }
+
+    .room-card .flex,
+    .room-card .card-box {
+        position: relative;
+        flex-direction: column;
+    }
+
+    .room-card .end {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .room-card .off-badge {
+        position: absolute;
+        right: 1rem;
+        top: 0;
+    }
+
+    .tags li {
+        white-space: nowrap;
+    }
+
+    #policies .flex {
+        flex-direction: column;
+    }
+
+    .offcanvas .img-box,
+    .offcanvas .text-box {
+        width: 100%;
+    }
+
+    .features,
+    .specialty {
+        padding: 0;
+    }
+
+}
