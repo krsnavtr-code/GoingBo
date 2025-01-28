@@ -19,8 +19,8 @@
 </style>
 <form action="{{ url('flight/search') }}" method="get" class="flight_form" id="flight_form">
     <div class="trip_types jcsb">
-        <div class="rflex">
-            <div class="trip_type">
+        <div class="rflex trip_type_wrap">
+            <div class="trip_type mb-5">
                 <input type="radio" name="journey_type" id="x1" checked value="1">
                 <label for="x1">One Way</label>
             </div>
@@ -39,36 +39,39 @@
             </ul>
         </div>
     </div>
+
     <div class="fields rflex">
-        <div class="col-5 destiantions">
+        <div class="col-6 destiantions">
             <div class="wrapper location">
                 <div class="col-6">
-                    <div class="vu-select from-select">
-                        <div class="vu-content">
-                            <label for="">From</label>
-                            <input type="text" id="fromInput" placeholder="Enter City or airport" class="vu-input"     autocomplete="off" required>
-                            <input type="hidden" class="airport_code" name="from">
-                            <p><span class="airport_code a_code"> </span><span class="airport_name"> </span></p>
-                        </div>
-                        <div class="vu-suggestion"></div>
-                    </div>
-                </div>
-                <span class="tw-icon" id="interchangeBtn"> <i class="fa-solid fa-right-left "></i> </span>
-                <div class="col-6">
-                    <div class="vu-select to-select">
-                        <div class="vu-content">
-                            <label for="">To</label>
-                            <input type="text" name="" id="toInput" placeholder="    Enter City or airport"   class="vu-input" autocomplete="off" required>
-                            <input type="hidden" class="airport_code" name="to">
-                            <p><span class="airport_code a_code"> </span><span class="airport_name"> </span></p>
-                        </div>
-                        <div class="vu-suggestion"></div>
-                    </div>
-                </div>
+    <div class="vu-select from-select">
+        <div class="vu-content">
+            <label for="fromInput" class="floating-label">From</label>
+            <input type="text" id="fromInput" placeholder='Enter City Name' class="vu-input" autocomplete="off" required>
+            <input type="hidden" class="airport_code" name="from">
+            <p><span class="airport_code a_code"> </span><span class="airport_name"> </span></p>
+        </div>
+        <div class="vu-suggestion"></div>
+    </div>
+</div>
+<span class="tw-icon" id="interchangeBtn"> <i class="fa-solid fa-right-left "></i> </span>
+<div class="col-6">
+    <div class="vu-select to-select">
+        <div class="vu-content">
+            <label for="">To</label>
+            <input type="text" name="" id="toInput" placeholder='Enter City Name' class="vu-input" autocomplete="off" required>
+            <input type="hidden" class="airport_code" name="to">
+            <p><span class="airport_code a_code"> </span><span class="airport_name"> </span></p>
+        </div>
+        <div class="vu-suggestion vu-suggestion-to"></div>
+    </div>
+</div>
             </div>
         </div>
-        <div class="col-4 dates-wrap">
-            <div class="wrapper dates">
+
+        <!-- Date Selection -->
+        <div class="col-6 dates-wrap">
+            <div class="wrapper dates gap-5">
                 <div class="col-6">
                     <div class="vu-date">
                         <div class="vu-content">
@@ -78,7 +81,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <!-- <span class="tw-icon" id="interchangeBtn"> <i class="fa-solid fa-right-left "></i> </span> -->
+                <div class="col-6 ml-1">
                     <div class="vu-date">
                         <div class="vu-content">
                             <label for="">Return</label>
@@ -88,128 +92,120 @@
                     </div>
                 </div>
                 <div class="vu-suggestion"></div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="col-3 paxs">
-            <div class="wrapper pax" tabindex="0">
-                <div class="vu-content">
-                    <label for="">Travellers and Class</label>
-                    <div class="desc" id="pass_det">1 Adult</div>
-                    <p id="fclass">Any Class</p>
-                </div>
-                <div class="vu-suggest">
-                    <div class="counters rflex">
-                        <div class="count-wrap">
-                            <h6>Adults</h6>
-                            <p>(above 12 years)</p>
-                            <div class="counter">
-                                <i class="fa-solid fa-minus"></i>
-                                <input type="number" name="adult" id="adult_pax" value="1">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="count-wrap">
-                            <h6>Children</h6>
-                            <p>(2-12 years)</p>
-                            <div class="counter">
-                                <i class="fa-solid fa-minus"></i>
-                                <input type="number" name="child" id="child_pax" value="0">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="count-wrap">
-                            <h6>Infants</h6>
-                            <p>(0-2 years)</p>
-                            <div class="counter">
-                                <i class="fa-solid fa-minus"></i>
-                                <input type="number" name="infant" id="infant_pax" value="0">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flight_classes rflex wrap">
-                        <div class="flight_class col-6">
-                            <input type="radio" name="travelclass" value="1" id="po0" checked>
-                            <label for="po0">All</label>
-                        </div>
-                        <div class="flight_class col-6">
-                            <input type="radio" name="travelclass" value="2" id="po1">
-                            <label for="po1">Economy</label>
-                        </div>
-                        <div class="flight_class col-6">
-                            <input type="radio" name="travelclass" value="3" id="po2">
-                            <label for="po2">Premium Economy</label>
-                        </div>
-                        <div class="flight_class col-6">
-                            <input type="radio" name="travelclass" value="4" id="po3">
-                            <label for="po3">Business</label>
-                        </div>
-                        <div class="flight_class col-6">
-                            <input type="radio" name="travelclass" value="5" id="po4">
-                            <label for="po4">Premium Business</label>
-                        </div>
-                        <div class="flight_class col-6">
-                            <input type="radio" name="travelclass" value="6" id="po5">
-                            <label for="po5">First Class</label>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-
     </div>
-    <div class="fare_type_box">
-        <div class="cflex" style="gap:20px">
-            <div class="rflex aic">
-
-                <p><b> Special Fares </b> </p>
-
-                <div class="fare_types rflex">
-
-                    <div class="fare_type">
-                        <div class="ft_ra">
-                            <input type="radio" name="fare_type" id="f2" value="1">
-                            <img loading="lazy" src="{{ url('images/flight/soldier.png') }}" width="32"
-                                height="32" alt="flightimage">
-                            <label for="f2">Armed Forces</label>
-                        </div>
-
-                    </div>
-                    <div class="fare_type">
-                        <div class="ft_ra">
-                            <input type="radio" name="fare_type" id="f3" value="2">
-                            <img loading="lazy" src="{{ url('images/flight/senior.png') }}" width="32"
-                                height="32" alt="flightimage">
-                            <label for="f3">Senior Citizen</label>
+    
+    <!-- Travellers and Class -->
+    <div class="paxs mt-5 paxs-alignment">
+        <div class="wrapper pax travellers-class-width " tabindex="0">
+            <div class="vu-content bg-white pax-bg-color">
+                <label for="">Travellers & Class</label>
+                <div class="desc" id="pass_det">1 Adult</div>
+                <p id="fclass">Any Class</p>
+            </div>
+            <div class="vu-suggest col-3">
+                <div class="counters rflex">
+                    <div class="count-wrap">
+                        <h6>Adults</h6>
+                        <p>(above 12 years)</p>
+                        <div class="counter">
+                            <i class="fa-solid fa-minus"></i>
+                            <input type="number" name="adult" id="adult_pax" value="1">
+                            <i class="fa-solid fa-plus"></i>
                         </div>
                     </div>
-                    <div class="fare_type">
-                        <div class="ft_ra">
-                            <input type="radio" name="fare_type" id="f4" value="3">
-                            <img loading="lazy" src="{{ url('images/flight/student.png') }}" width="32"
-                                height="32" alt="flightimage">
-                            <label for="f4">Student</label>
+                    <div class="count-wrap">
+                        <h6>Children</h6>
+                        <p>(2-12 years)</p>
+                        <div class="counter">
+                            <i class="fa-solid fa-minus"></i>
+                            <input type="number" name="child" id="child_pax" value="0">
+                            <i class="fa-solid fa-plus"></i>
                         </div>
                     </div>
-                    <div class="fare_type">
-                        <div class="ft_ra">
-                            <input type="radio" name="fare_type" id="f5" value="4">
-                            <img loading="lazy" src="{{ url('images/flight/doctor.png') }}" width="32"
-                                height="32" alt="flightimage">
-                            <label for="f5">Doctors & Nurses</label>
+                    <div class="count-wrap">
+                        <h6>Infants</h6>
+                        <p>(0-2 years)</p>
+                        <div class="counter">
+                            <i class="fa-solid fa-minus"></i>
+                            <input type="number" name="infant" id="infant_pax" value="0">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flight_classes rflex wrap">
+                    <div class="flight_class col-6">
+                        <input type="radio" name="travelclass" value="1" id="po0" checked>
+                        <label for="po0">All</label>
+                    </div>
+                    <div class="flight_class col-6">
+                        <input type="radio" name="travelclass" value="2" id="po1">
+                        <label for="po1">Economy</label>
+                    </div>
+                    <div class="flight_class col-6">
+                        <input type="radio" name="travelclass" value="3" id="po2">
+                        <label for="po2">Premium Economy</label>
+                    </div>
+                    <div class="flight_class col-6">
+                        <input type="radio" name="travelclass" value="4" id="po3">
+                        <label for="po3">Business</label>
+                    </div>
+                    <div class="flight_class col-6">
+                        <input type="radio" name="travelclass" value="5" id="po4">
+                        <label for="po4">Premium Business</label>
+                    </div>
+                    <div class="flight_class col-6">
+                        <input type="radio" name="travelclass" value="6" id="po5">
+                        <label for="po5">First Class</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Spacial Fares -->
+        <div class="fare_type_box col-9 pax-bg-color">
+            <div class="cflex" style="gap:20px">
+                <div class="rflex aic">
+                    <p><b> Special Fares </b> </p>
+                    <div class="fare_types rflex">
+                        <div class="fare_type fare_type_left">
+                            <div class="ft_ra">
+                                <input type="radio" name="fare_type" id="f2" value="1">
+                                <img loading="lazy" src="{{ url('images/flight/soldier.png') }}" width="25"
+                                    height="25"alt="flightimage">
+                                <label for="f2">Armed Forces</label>
+                            </div>
+                        </div>
+                        <div class="fare_type fare_type_left">
+                            <div class="ft_ra">
+                                <input type="radio" name="fare_type" id="f3" value="2">
+                                <img loading="lazy" src="{{ url('images/flight/senior.png') }}" width="25"
+                                    height="25"alt="flightimage">
+                                <label for="f3">Senior Citizen</label>
+                            </div>
+                        </div>
+                        <div class="fare_type fare_type_right">
+                            <div class="ft_ra">
+                                <input type="radio" name="fare_type" id="f4" value="3">
+                                <img loading="lazy" src="{{ url('images/flight/student.png') }}" width="25"
+                                    height="25"alt="flightimage">
+                                <label for="f4">Student</label>
+                            </div>
+                        </div>
+                        <div class="fare_type fare_type_right">
+                            <div class="ft_ra">
+                                <input type="radio" name="fare_type" id="f5" value="4">
+                                <img loading="lazy" src="{{ url('images/flight/doctor.png') }}" width="25"
+                                    height="25"alt="flightimage">
+                                <label for="f5">Doctors & Nurses</label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
+
     <button type="submit" class="btn search_btn" id="btn" ><i class="fa-solid fa-magnifying-glass"></i>Search Flights</button>
 </form>
 
@@ -220,6 +216,24 @@
 
 
     <script>
+ // Function to update placeholder text based on screen width
+    function updatePlaceholders() {
+        const fromInput = document.getElementById("fromInput");
+        const toInput = document.getElementById("toInput");
+
+        if (window.innerWidth <= 1024) {
+            fromInput.placeholder = "Enter City";
+            toInput.placeholder = "Enter City";
+        } else {
+            fromInput.placeholder = "Enter City Name";
+            toInput.placeholder = "Enter City Name";
+        }
+    }
+    // Run the function on page load
+    updatePlaceholders();
+    // Add a resize event listener to update on window resize
+    window.addEventListener("resize", updatePlaceholders);
+
         // Function to fetch flight data from the API
         async function fetchFlightData(from, to) {
             const params = new URLSearchParams({ from: from, to: to });

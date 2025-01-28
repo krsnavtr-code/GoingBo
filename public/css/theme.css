@@ -11,6 +11,12 @@
 .brand span:first-child {
     color: var(--fv_sec);
 }
-.brand span:last-child {
+.brand span:nth-child(2) {
     color: var(--fv_prime);
 }
+/* .brand span:last-child {
+    color: var(--fv_prime);
+} */
+ .nav_corporate {
+    color: var(--fv_prime);
+ }

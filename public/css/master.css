@@ -367,10 +367,10 @@ button {
 /* ---------- Bootstrap Containers End ---------- */
 /* ---------- Bootstrap layouts ---------- */
 .row {
-    --gut: 10px;
+    /* --gut: 10px; */
     display: flex;
     flex-wrap: wrap;
-    padding: var(--gut);
+    /* padding: var(--gut); */
 }
 .row .row {
     padding: 0;
