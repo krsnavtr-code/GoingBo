@@ -21,7 +21,7 @@ header {
 } */
 .header_main {
     height: var(--height);
-    padding: 5px 30px;
+    padding: 0px 30px;
     /* background: transparent; */
     transition: all 0.3s;
     box-shadow: 0 0 20px 0 #00000033;
@@ -37,11 +37,13 @@ header {
     height: 3em;
 }
 .header_main .web_logo {
-    max-height: 30px;
+    max-height: 24px;
+    max-width: 24px;
 }
 
 .prime_nav {
-    gap: 4px;
+    align-items: center;
+    gap: 1px;
     /* font-size: small; */
 }
 header nav li {
@@ -104,6 +106,7 @@ header nav li > ul::before {
 .sec_nav .btn.prime {
     background: var(--fv_sec);
     color: white;
+    padding: 5px 15px;
 }
 header ul:where(.sign_in, .signed_in) {
     right: 0;

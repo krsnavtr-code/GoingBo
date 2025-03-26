@@ -34,8 +34,8 @@
 
             <li>
                 <a href="{{ url('packages') }}" target="_blank">
-                    <img src="{{ url('images/web assets/icon-2.png') }}" style="padding-bottom: 6px;" class="web_logo" alt="logo">
-                    <span style="margin: 0px 0px 5px 5px;">Holiday Packages</span>
+                    <img src="{{ url('images/web assets/icon-2.png') }}" class="web_logo" alt="logo">
+                    <span style="margin: 0px 0px 0px 5px;">Holiday Packages</span>
                 </a>
             </li>
 
